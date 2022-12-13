@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16644A2D2948091600A6741E /* Rolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2C2948091600A6741E /* Rolling.swift */; };
+		16644A2F2948092000A6741E /* RollingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2E2948092000A6741E /* RollingStore.swift */; };
 		169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169222DC29470C8F001B9E43 /* _kimWorldApp.swift */; };
 		169222DF29470C8F001B9E43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169222DE29470C8F001B9E43 /* ContentView.swift */; };
 		169222E129470C93001B9E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 169222E029470C93001B9E43 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16644A2C2948091600A6741E /* Rolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rolling.swift; sourceTree = "<group>"; };
+		16644A2E2948092000A6741E /* RollingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingStore.swift; sourceTree = "<group>"; };
 		169222D929470C8F001B9E43 /* 3kimWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3kimWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169222DC29470C8F001B9E43 /* _kimWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _kimWorldApp.swift; sourceTree = "<group>"; };
 		169222DE29470C8F001B9E43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				169222E029470C93001B9E43 /* Assets.xcassets */,
 				169222EA29470CE0001B9E43 /* GoogleService-Info.plist */,
 				169222E229470C93001B9E43 /* Preview Content */,
+				16644A2C2948091600A6741E /* Rolling.swift */,
+				16644A2E2948092000A6741E /* RollingStore.swift */,
 			);
 			path = 3kimWorld;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 				3AB13DBF29470F9300EC41A4 /* HomeView.swift in Sources */,
 				169222DF29470C8F001B9E43 /* ContentView.swift in Sources */,
 				169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */,
+				16644A2D2948091600A6741E /* Rolling.swift in Sources */,
+				16644A2F2948092000A6741E /* RollingStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
