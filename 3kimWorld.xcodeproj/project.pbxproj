@@ -18,6 +18,7 @@
 		169222F029470D33001B9E43 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 169222EF29470D33001B9E43 /* FirebaseFirestore */; };
 		169222F229470D33001B9E43 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 169222F129470D33001B9E43 /* FirebaseFirestoreSwift */; };
 		3AB13DBF29470F9300EC41A4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB13DBE29470F9300EC41A4 /* HomeView.swift */; };
+		3AB13DDB2948538600EC41A4 /* RollingPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB13DDA2948538600EC41A4 /* RollingPaperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		169222E329470C93001B9E43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		169222EA29470CE0001B9E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3AB13DBE29470F9300EC41A4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3AB13DDA2948538600EC41A4 /* RollingPaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingPaperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				169222DC29470C8F001B9E43 /* _kimWorldApp.swift */,
 				169222DE29470C8F001B9E43 /* ContentView.swift */,
+				3AB13DDA2948538600EC41A4 /* RollingPaperView.swift */,
 				3AB13DBE29470F9300EC41A4 /* HomeView.swift */,
 				169222E029470C93001B9E43 /* Assets.xcassets */,
 				169222EA29470CE0001B9E43 /* GoogleService-Info.plist */,
@@ -169,6 +172,7 @@
 				169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */,
 				16644A2D2948091600A6741E /* Rolling.swift in Sources */,
 				16644A2F2948092000A6741E /* RollingStore.swift in Sources */,
+				3AB13DDB2948538600EC41A4 /* RollingPaperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
