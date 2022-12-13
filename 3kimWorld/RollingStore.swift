@@ -14,40 +14,10 @@ class RollingStore: ObservableObject {
     let database = Firestore.firestore()
     
     init() {
-        /*
-        postits = [
-            Postit(id: UUID().uuidString, user: "ned", memo: "Good morning", colorIndex: 0, createdAt: Date().timeIntervalSince1970),
-            
-            Postit(id: UUID().uuidString, user: "ned", memo: "Good evening", colorIndex: 1, createdAt: Date().timeIntervalSince1970),
-            
-            Postit(id: UUID().uuidString, user: "ned", memo: "Hello World", colorIndex: 2, createdAt: Date().timeIntervalSince1970),
-            
-            Postit(id: UUID().uuidString, user: "ned", memo: "Hello my friend", colorIndex: 3, createdAt: Date().timeIntervalSince1970)
-        ]
-         */
         rollings = []
     }
-    
-  
-//    func fetchPostits() {
-//        database.collection("rollingpaper")
-//            .getDocuments { (snapshot, error) in
-//                self.rollings.removeAll()
-//
-//                if let snapshot {
-//                    for document in snapshot.documents {
-//                        let id: String = document.documentID
-//
-//                        let docData = document.data()
-//                        let message: String = docData["message"] as? String ?? ""
-//                        let rolling: Rolling = Rolling(id: id, message: message)
-//
-//                        self.rollings.append(rolling)
-//                    }
-//                }
-//            }
-//    }
-    
+
+
     func fetchPostitsTEST() {
         database
             .collection("rollingpaper3")
@@ -58,13 +28,13 @@ class RollingStore: ObservableObject {
                 
                 if let snapshot {
                     for document in snapshot.documents {
-//                        print(document.documentID)
+                        //                        print(document.documentID)
                         let id: String = document.documentID
-
+                        
                         let docData = document.data()
                         let message: String = docData["message"] as? String ?? ""
                         let rolling: Rolling = Rolling(id: id, message: message)
-
+                        
                         self.rollings.append(rolling)
                     }
                     print(self.rollings)
@@ -82,31 +52,31 @@ class RollingStore: ObservableObject {
             .collection("replies")  // 댓글(롤링페이퍼)
             .document(rolling.id)
             .setData(["message": rolling.message])
-        fetchPostitsTEST(userID: userID)
+        //        fetchPostitsTEST(userID: userID)
     }
     
-    func fetchPostitsTEST(userID: String) {
+    func addTeam(rolling: Rolling) {
         database
-            .collection("rollingpaper3")
+            .collection("rollingpaper3") //
             .document("Team5")
-            .collection("articles")
-            .document(userID)
-            .collection("replies")
-            .getDocuments { (snapshot, error) in
-                self.rollings.removeAll()
-                
-                if let snapshot {
-                    for document in snapshot.documents {
-                        print(document.documentID)
-                    }
-                    print(self.rollings)
-                }
-            }
+            .collection("articles") // 게시물(사람)
+            .document(rolling.id) // articles.id
+            .setData(["message": rolling.message])
+        fetchPostitsTEST()
     }
     
-//    func removePostit(_ rolling: Rolling) {
-//        database.collection("rollingpaper")
-//            .document(rolling.id).delete()
-//        fetchPostits()
-//    }
+    func createRestaurant(restaurantName: String, rolling: Rolling) {
+        let db = Firestore.firestore()
+        let docRef = db.collection("rollingpaper3").document("Team5").collection("articles").document(rolling.id)
+        
+        docRef.setData(["name": restaurantName]) { error in
+            if let error = error {
+                print("Error writing document: \(error)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
 }
+
+

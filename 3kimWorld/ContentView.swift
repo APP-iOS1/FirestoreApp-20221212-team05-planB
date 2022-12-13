@@ -12,12 +12,10 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var rollingStore = RollingStore()
-    @State private var testArray: [String] = ["1","2","3","4","5"]
-    @State private var testMember: [String] = ["김영서","김태형","김민호"]
-    @State private var message: String = ""
+    @State private var presentAlert = false
+    @State private var teamTextField = ""
     
     var body: some View {
-        
         NavigationStack {
             List {
                 ForEach(rollingStore.rollings,id: \.self) { item in
@@ -26,31 +24,33 @@ struct ContentView: View {
                     } label: {
                         Text("\(item.id)")
                     }
-
-                    
                 }
             }
             .navigationTitle("롤링페이퍼")
             .onAppear {
                     rollingStore.fetchPostitsTEST()
                 }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("add") {
+                        presentAlert = true
+                    }
+                    .alert("추가하기", isPresented: $presentAlert, actions: {
+                        TextField("",text: $teamTextField)
+                        
+                        Button("취소",role: .cancel,action: {})
+                        Button("추가", action: {
+                            let createRolling: Rolling = Rolling(id: teamTextField, message: teamTextField)
+                            rollingStore.addTeam(rolling: createRolling)})
+                    }, message: {
+                        Text("추가 할 이름을 적어주세요")
+                    })
+
+
+                }
+            }
         }
     }
- 
-//    func viewMember() -> some View {
-//        List {
-//            ForEach(testMember,id: \.self) { item in
-//                NavigationLink {
-//                    //해당 리스트를 클릭하면 회고 조원들 보여주기
-//                    CreateMessage(rollingStore: rollingStore)
-//                } label: {
-//                    Text("\(item)")
-//                }
-//
-//
-//            }
-//        }.navigationTitle("클릭해서 롤링페이퍼 남기러가기")
-//    }
 }
 
 //MARK: - 이따 파일빼기

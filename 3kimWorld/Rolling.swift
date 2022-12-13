@@ -8,14 +8,19 @@
 import Foundation
 
 
-struct Rolling: Identifiable,Hashable {
+struct Rolling: Identifiable, Hashable {
     var id: String
     var message: String
-    
-    var dictionary: [String: Any] {
-        return [
-            "id":id,
-        ]
-    }
 }
 
+//MARK: -
+struct Paper: Identifiable, Hashable {
+    var id: String
+    var team: String
+    var members: [Member]
+}
+
+struct Member: Identifiable, Hashable {
+    var id: String //키값 김민호
+    var replies: [String]
+}
