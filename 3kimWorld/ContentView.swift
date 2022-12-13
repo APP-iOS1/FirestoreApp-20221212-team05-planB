@@ -56,7 +56,6 @@ struct ContentView: View {
 //MARK: - 이따 파일빼기
 struct CreateMessage: View {
     @Environment(\.dismiss) var dismiss
-    
     @StateObject var rollingStore: RollingStore
     @State var message: String = ""
     @State var userID: String
@@ -66,7 +65,8 @@ struct CreateMessage: View {
                 .frame(width: 300,height: 500)
             Button {
                 //완료버튼 눌렀을 때
-                rollingStore.addPostit(userID: userID, Rolling(id: UUID().uuidString, message: message))
+                let createRolling: Rolling = Rolling(id: UUID().uuidString, message: message)
+                rollingStore.addPostit(userID: userID, createRolling)
                 dismiss()
                 print("tapped")
             } label: {

@@ -11,5 +11,11 @@ import Foundation
 struct Rolling: Identifiable,Hashable {
     var id: String
     var message: String
+    
+    var dictionary: [String: Any] {
+        return [
+            "id":id,
+        ]
+    }
 }
 

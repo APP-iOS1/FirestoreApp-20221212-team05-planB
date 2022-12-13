@@ -70,20 +70,38 @@ class RollingStore: ObservableObject {
                     print(self.rollings)
                 }
             }
-            
     }
+    
     
     func addPostit(userID: String,_ rolling: Rolling) {
         database
-            .collection("rollingpaper") //
+            .collection("rollingpaper3") //
             .document("Team5")
             .collection("articles") // 게시물(사람)
             .document(userID) // articles.id
             .collection("replies")  // 댓글(롤링페이퍼)
             .document(rolling.id)
             .setData(["message": rolling.message])
-
-        fetchPostitsTEST()
+        fetchPostitsTEST(userID: userID)
+    }
+    
+    func fetchPostitsTEST(userID: String) {
+        database
+            .collection("rollingpaper3")
+            .document("Team5")
+            .collection("articles")
+            .document(userID)
+            .collection("replies")
+            .getDocuments { (snapshot, error) in
+                self.rollings.removeAll()
+                
+                if let snapshot {
+                    for document in snapshot.documents {
+                        print(document.documentID)
+                    }
+                    print(self.rollings)
+                }
+            }
     }
     
 //    func removePostit(_ rolling: Rolling) {
