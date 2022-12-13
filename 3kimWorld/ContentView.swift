@@ -38,10 +38,12 @@ struct ContentView: View {
                     .alert("추가하기", isPresented: $presentAlert, actions: {
                         TextField("",text: $teamTextField)
                         
-                        Button("취소",role: .cancel,action: {})
+                        Button("취소",role: .cancel,action: {
+                        })
                         Button("추가", action: {
                             let createRolling: Rolling = Rolling(id: teamTextField, message: teamTextField)
-                            rollingStore.addTeam(rolling: createRolling)})
+                            rollingStore.addTeam(rolling: createRolling)
+                        })
                     }, message: {
                         Text("추가 할 이름을 적어주세요")
                     })
@@ -72,6 +74,7 @@ struct CreateMessage: View {
             } label: {
                 Text("작성완료")
             }
+            NavigationLink(destination: RollingPaperView(userID: userID), label: {Text("롤링페이퍼")})
             Spacer()
 
         }

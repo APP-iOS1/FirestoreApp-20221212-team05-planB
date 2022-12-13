@@ -10,6 +10,7 @@ import FirebaseFirestore
 
 class RollingStore: ObservableObject {
     @Published var rollings: [Rolling] = []
+    @Published var rollingPapers: [String] = []
     
     let database = Firestore.firestore()
     
@@ -65,18 +66,31 @@ class RollingStore: ObservableObject {
         fetchPostitsTEST()
     }
     
-    func createRestaurant(restaurantName: String, rolling: Rolling) {
-        let db = Firestore.firestore()
-        let docRef = db.collection("rollingpaper3").document("Team5").collection("articles").document(rolling.id)
-        
-        docRef.setData(["name": restaurantName]) { error in
-            if let error = error {
-                print("Error writing document: \(error)")
-            } else {
-                print("Document successfully written!")
+    func findRollingPaper(user: String) {
+        database
+            .collection("rollingpaper3")
+            .document("Team5")
+            .collection("articles")
+            .document(user)
+            .collection("replies")
+            .getDocuments { (snapshot, error) in
+                self.rollingPapers.removeAll()
+                
+                if let snapshot {
+                    for document in snapshot.documents {
+                        print(document.documentID)
+                        let id: String = document.documentID
+                        let docData = document.data()
+                        let message: String = docData["message"] as? String ?? ""
+                        let rolling: Rolling = Rolling(id: id, message: message)
+                        
+                        self.rollingPapers.append(rolling.message)
+                    }
+                    print(self.rollingPapers)
+                }
             }
-        }
     }
+
 }
 
 
