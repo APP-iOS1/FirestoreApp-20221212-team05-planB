@@ -8,13 +8,8 @@
 import Foundation
 
 
-struct Rolling: Codable, Identifiable {
+struct Rolling: Identifiable,Hashable {
     var id: String
-}
-struct Rolling: Codable, Identifiable {
-    var id: String
-}
-struct Rolling: Codable, Identifiable {
-    var id: String
+    var message: String
 }
 

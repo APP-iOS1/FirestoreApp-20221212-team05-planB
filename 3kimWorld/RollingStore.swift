@@ -29,28 +29,8 @@ class RollingStore: ObservableObject {
     }
     
   
-    func fetchPostits() {
-        database.collection("rollingpaper")
-            .getDocuments { (snapshot, error) in
-                self.rollings.removeAll()
-                
-                if let snapshot {
-                    for document in snapshot.documents {
-                        let id: String = document.documentID
-                        
-                        let docData = document.data()
-                        let message: String = docData["message"] as? String ?? ""
-                        let rolling: Rolling = Rolling(id: id, message: message)
-                        
-                        self.rollings.append(rolling)
-                    }
-                }
-            }
-    }
-    
-//    func fetchPostitsTEST() {
-//        database
-//            .collection("rollingpaper")
+//    func fetchPostits() {
+//        database.collection("rollingpaper")
 //            .getDocuments { (snapshot, error) in
 //                self.rollings.removeAll()
 //
@@ -68,29 +48,42 @@ class RollingStore: ObservableObject {
 //            }
 //    }
     
+    func fetchPostitsTEST() {
+        database
+            .collection("rollingpaper3")
+            .document("Team5")
+            .collection("articles")
+            .getDocuments { (snapshot, error) in
+                self.rollings.removeAll()
+                
+                if let snapshot {
+                    for document in snapshot.documents {
+//                        print(document.documentID)
+                        let id: String = document.documentID
+
+                        let docData = document.data()
+                        let message: String = docData["message"] as? String ?? ""
+                        let rolling: Rolling = Rolling(id: id, message: message)
+
+                        self.rollings.append(rolling)
+                    }
+                    print(self.rollings)
+                }
+            }
+            
+    }
     
-    
-//    struct rollingpaper: Codable, Identifiable {
-//        var id: String
-//    }
-//    struct articles: Codable, Identifiable {
-//        var id: String
-//    }
-//    struct replies: Codable, Identifiable {
-//        var id: String
-//        var message: String
-//    }
-//
-    func addPostit(_ rolling: Rolling) {
+    func addPostit(userID: String,_ rolling: Rolling) {
         database
             .collection("rollingpaper") //
-            .document(rolling.id)
+            .document("Team5")
             .collection("articles") // 게시물(사람)
-            .document(documentID)
+            .document(userID) // articles.id
             .collection("replies")  // 댓글(롤링페이퍼)
+            .document(rolling.id)
             .setData(["message": rolling.message])
-        
-        fetchPostits()
+
+        fetchPostitsTEST()
     }
     
 //    func removePostit(_ rolling: Rolling) {
