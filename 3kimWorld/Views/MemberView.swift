@@ -17,18 +17,23 @@ struct MemberView: View {
                         VStack {
                             TextEditor(text: $message)
                                 .frame(width: 300,height: 500)
-                            Button {
-                                //완료버튼 눌렀을 때
-                                let createMessage: Message = Message(id: UUID().uuidString, message: message)
-                                rollingStore.addMessage(member: item, team: team, message: createMessage)
-//                                dismiss()
-                                print("tapped")
-                            } label: {
-                                Text("작성완료")
-                            }
-                            NavigationLink(destination: RollingPaperView(team: team, member: item), label: {Text("롤링페이퍼")})
-                            Spacer()
-
+                            HStack{
+                                Button {
+                                    //완료버튼 눌렀을 때
+                                    let createMessage: Message = Message(id: UUID().uuidString, message: message)
+                                    rollingStore.addMessage(member: item, team: team, message: createMessage)
+                                    //                                dismiss()
+                                    print("tapped")
+                                } label: {
+                                    Text("작성완료")
+                                        .frame(width: 185, height: 50)
+                                        .background(.yellow)
+                                }
+                                NavigationLink(destination: RollingPaperView(team: team, member: item), label: {Text("롤링페이퍼").frame(width: 185, height: 50)
+                                    .background(.yellow)})
+                                Spacer()
+                            }.foregroundColor(.black)
+                                .padding(.leading, 10)
                         }
                         //                        CreateMessage(dismiss: _dismiss, rollingStore: rollingStore, userID: item.id)
                     } label: {
@@ -36,6 +41,7 @@ struct MemberView: View {
                     }
                 }
             }
+            
             .navigationTitle("롤링페이퍼")
             .onAppear {
                 rollingStore.fetchMember(team: team)
