@@ -36,8 +36,8 @@ struct MemberViewBody: View {
     }
 }
 
-struct MemberViewBody_Previews: PreviewProvider {
-    static var previews: some View {
-        MemberViewBody()
-    }
-}
+//struct MemberViewBody_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MemberViewBody(item:item,team:team)
+//    }
+//}

@@ -35,8 +35,8 @@ struct MemberViewToolbar: ToolbarContent {
     }
 }
 
-struct MemberViewToolbar_Previews: PreviewProvider {
-    static var previews: some View {
-        MemberViewToolbar()
-    }
-}
+//struct MemberViewToolbar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MemberViewToolbar()
+//    }
+//}
