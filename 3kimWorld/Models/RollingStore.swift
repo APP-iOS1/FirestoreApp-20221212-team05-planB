@@ -8,12 +8,19 @@
 import Foundation
 import FirebaseFirestore
 
+
+
+
+
 class RollingStore: ObservableObject {
     @Published var members: [Member] = []
     @Published var rollingPapers: [Message] = []
     @Published var teams: [Team] = []
     
     let database = Firestore.firestore()
+    
+    
+    
     
     
     func fetchMember(team: Team) {

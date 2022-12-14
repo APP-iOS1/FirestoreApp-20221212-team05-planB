@@ -32,3 +32,4 @@ struct MakeTeamView_Previews: PreviewProvider {
         }
     }
 }
+
