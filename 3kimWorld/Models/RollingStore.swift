@@ -9,25 +9,20 @@ import Foundation
 import FirebaseFirestore
 
 class RollingStore: ObservableObject {
-    @Published var rollings: [Rolling] = []
-    @Published var rollingPapers: [String] = []
-    //팀 배열
-    @Published var papers: [Paper] = []
+    @Published var members: [Member] = []
+    @Published var rollingPapers: [Message] = []
+    @Published var teams: [Team] = []
     
     let database = Firestore.firestore()
     
-    init() {
-        rollings = []
-    }
     
-    
-    func fetchPostitsTEST(paper: Paper) {
+    func fetchMember(team: Team) {
         database
-            .collection("rollingpaper3")
-            .document(paper.id)
+            .collection("rollingpaper")
+            .document(team.id)
             .collection("articles")
             .getDocuments { (snapshot, error) in
-                self.rollings.removeAll()
+                self.members.removeAll()
                 
                 if let snapshot {
                     for document in snapshot.documents {
@@ -35,54 +30,42 @@ class RollingStore: ObservableObject {
                         let id: String = document.documentID
                         
                         let docData = document.data()
-                        let message: String = docData["message"] as? String ?? ""
-                        let rolling: Rolling = Rolling(id: id, message: message)
+                        let name: String = docData["name"] as? String ?? ""
+                        let member: Member = Member(id: id, name: name)
                         
-                        self.rollings.append(rolling)
+                        self.members.append(member)
                     }
-                    print(self.rollings)
+                    print(self.members)
                 }
             }
     }
     
-    
-    func addPostit(userID: String,_ rolling: Rolling, paper: Paper) {
+    func fetchTeam() {
         database
-            .collection("rollingpaper3") //
-            .document(paper.id)
-            .collection("articles") // 게시물(사람)
-            .document(userID) // articles.id
-            .collection("replies")  // 댓글(롤링페이퍼)
-            .document(rolling.id)
-            .setData(["message": rolling.message])
-        //        fetchPostitsTEST(userID: userID)
+            .collection("rollingpaper")
+            .getDocuments { (snapshot, error) in
+                self.teams.removeAll()
+                
+                if let snapshot {
+                    for document in snapshot.documents {
+                        //                        print(document.documentID)
+                        let id: String = document.documentID
+                        let docData = document.data()
+                        let teamNumber: String = docData["team"] as? String ?? ""
+                        let team: Team = Team(id: id, team: teamNumber)
+                        self.teams.append(team)
+                    }
+                    print(self.teams)
+                }
+            }
     }
     
-    func addTeam(rolling: Rolling, paper: Paper) {
+    func fetchMessage(member: Member, team: Team) {
         database
-            .collection("rollingpaper3") //
-            .document(paper.id)
-            .collection("articles") // 게시물(사람)
-            .document(rolling.id) // articles.id
-            .setData(["message": rolling.message])
-        fetchPostitsTEST(paper: paper)
-    }
-    
-    func addTeams(paper: Paper) {
-        database
-            .collection("rollingpaper3") //
-            .document(paper.id)
-            .setData(["message": "데헷"])
-        fetchTeam()
-    }
-    
-    
-    func findRollingPaper(user: String, paper: Paper) {
-        database
-            .collection("rollingpaper3")
-            .document(paper.id)
+            .collection("rollingpaper")
+            .document(team.id)
             .collection("articles")
-            .document(user)
+            .document(member.id)
             .collection("replies")
             .getDocuments { (snapshot, error) in
                 self.rollingPapers.removeAll()
@@ -93,32 +76,50 @@ class RollingStore: ObservableObject {
                         let id: String = document.documentID
                         let docData = document.data()
                         let message: String = docData["message"] as? String ?? ""
-                        let rolling: Rolling = Rolling(id: id, message: message)
+                        let rolling: Message = Message(id: id, message: message)
                         
-                        self.rollingPapers.append(rolling.message)
+                        self.rollingPapers.append(rolling)
                     }
                     print(self.rollingPapers)
                 }
             }
     }
+
     
-    func fetchTeam() {
+    func addMessage(member: Member, team: Team, message: Message) {
         database
-            .collection("rollingpaper3")
-            .getDocuments { (snapshot, error) in
-                self.papers.removeAll()
-                
-                if let snapshot {
-                    for document in snapshot.documents {
-                        //                        print(document.documentID)
-                        let id: String = document.documentID
-                        let paper: Paper = Paper(id: id)
-                        self.papers.append(paper)
-                    }
-                    print(self.papers)
-                }
-            }
+            .collection("rollingpaper") //
+            .document(team.id)
+            .collection("articles") // 게시물(사람)
+            .document(member.id) // articles.id
+            .collection("replies")  // 댓글(롤링페이퍼)
+            .document(message.id)
+            .setData(["message": message.message])
+        //        fetchPostitsTEST(userID: userID)
     }
+    
+
+    func addMember(member: Member, team: Team) {
+        database
+            .collection("rollingpaper") //
+            .document(team.id)
+            .collection("articles") // 게시물(사람)
+            .document(member.id) // articles.id
+            .setData(["name": member.name])
+        fetchMember(team: team)
+    }
+    
+    func addTeam(team: Team) {
+        database
+            .collection("rollingpaper") //
+            .document(team.id)
+            .setData(["team": team.team])
+        fetchTeam()
+    }
+    
+    
+    
+ 
     
 }
 
