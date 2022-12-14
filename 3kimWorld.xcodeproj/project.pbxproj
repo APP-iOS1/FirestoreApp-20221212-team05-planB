@@ -27,7 +27,6 @@
 		16644A2C2948091600A6741E /* Rolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rolling.swift; sourceTree = "<group>"; };
 		16644A2E2948092000A6741E /* RollingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingStore.swift; sourceTree = "<group>"; };
 		16644A322948705100A6741E /* RollingPaperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollingPaperView.swift; sourceTree = "<group>"; };
-		166FE9A12949A041003F71DC /* -kimWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-kimWorld-Info.plist"; sourceTree = SOURCE_ROOT; };
 		169222D929470C8F001B9E43 /* 3kimWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3kimWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169222DC29470C8F001B9E43 /* _kimWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _kimWorldApp.swift; sourceTree = "<group>"; };
 		169222DE29470C8F001B9E43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,7 +69,6 @@
 		169222DB29470C8F001B9E43 /* 3kimWorld */ = {
 			isa = PBXGroup;
 			children = (
-				166FE9A12949A041003F71DC /* -kimWorld-Info.plist */,
 				169222DC29470C8F001B9E43 /* _kimWorldApp.swift */,
 				76945AC529495E2A00454DEE /* Models */,
 				76945AC429495E1C00454DEE /* Views */,
