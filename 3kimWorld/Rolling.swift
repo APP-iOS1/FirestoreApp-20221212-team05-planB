@@ -16,8 +16,6 @@ struct Rolling: Identifiable, Hashable {
 //MARK: -
 struct Paper: Identifiable, Hashable {
     var id: String
-    var team: String
-    var members: [Member]
 }
 
 struct Member: Identifiable, Hashable {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1618FB7B2949503B00BBDB5B /* MakeTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */; };
 		16644A2D2948091600A6741E /* Rolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2C2948091600A6741E /* Rolling.swift */; };
 		16644A2F2948092000A6741E /* RollingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2E2948092000A6741E /* RollingStore.swift */; };
 		16644A332948705100A6741E /* RollingPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A322948705100A6741E /* RollingPaperView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamView.swift; sourceTree = "<group>"; };
 		16644A2C2948091600A6741E /* Rolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rolling.swift; sourceTree = "<group>"; };
 		16644A2E2948092000A6741E /* RollingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingStore.swift; sourceTree = "<group>"; };
 		16644A322948705100A6741E /* RollingPaperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollingPaperView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				16644A2C2948091600A6741E /* Rolling.swift */,
 				16644A2E2948092000A6741E /* RollingStore.swift */,
 				16644A322948705100A6741E /* RollingPaperView.swift */,
+				1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */,
 			);
 			path = 3kimWorld;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */,
 				16644A2D2948091600A6741E /* Rolling.swift in Sources */,
 				16644A2F2948092000A6741E /* RollingStore.swift in Sources */,
+				1618FB7B2949503B00BBDB5B /* MakeTeamView.swift in Sources */,
 				16644A332948705100A6741E /* RollingPaperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

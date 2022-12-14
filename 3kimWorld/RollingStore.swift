@@ -11,6 +11,8 @@ import FirebaseFirestore
 class RollingStore: ObservableObject {
     @Published var rollings: [Rolling] = []
     @Published var rollingPapers: [String] = []
+    //팀 배열
+    @Published var papers: [Paper] = []
     
     let database = Firestore.firestore()
     
@@ -66,6 +68,15 @@ class RollingStore: ObservableObject {
         fetchPostitsTEST()
     }
     
+    func addTeams(paper: Paper) {
+        database
+            .collection("rollingpaper3") //
+            .document(paper.id)
+            .setData(["message": "데헷"])
+        fetchTeam()
+    }
+    
+    
     func findRollingPaper(user: String) {
         database
             .collection("rollingpaper3")
@@ -87,6 +98,24 @@ class RollingStore: ObservableObject {
                         self.rollingPapers.append(rolling.message)
                     }
                     print(self.rollingPapers)
+                }
+            }
+    }
+    
+    func fetchTeam() {
+        database
+            .collection("rollingpaper3")
+            .getDocuments { (snapshot, error) in
+                self.papers.removeAll()
+                
+                if let snapshot {
+                    for document in snapshot.documents {
+                        //                        print(document.documentID)
+                        let id: String = document.documentID
+                        let paper: Paper = Paper(id: id)
+                        self.papers.append(paper)
+                    }
+                    print(self.papers)
                 }
             }
     }
