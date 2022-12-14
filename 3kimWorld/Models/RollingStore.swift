@@ -19,12 +19,12 @@ class RollingStore: ObservableObject {
     init() {
         rollings = []
     }
-
-
-    func fetchPostitsTEST() {
+    
+    
+    func fetchPostitsTEST(paper: Paper) {
         database
             .collection("rollingpaper3")
-            .document("Team5")
+            .document(paper.id)
             .collection("articles")
             .getDocuments { (snapshot, error) in
                 self.rollings.removeAll()
@@ -46,10 +46,10 @@ class RollingStore: ObservableObject {
     }
     
     
-    func addPostit(userID: String,_ rolling: Rolling) {
+    func addPostit(userID: String,_ rolling: Rolling, paper: Paper) {
         database
             .collection("rollingpaper3") //
-            .document("Team5")
+            .document(paper.id)
             .collection("articles") // 게시물(사람)
             .document(userID) // articles.id
             .collection("replies")  // 댓글(롤링페이퍼)
@@ -58,14 +58,14 @@ class RollingStore: ObservableObject {
         //        fetchPostitsTEST(userID: userID)
     }
     
-    func addTeam(rolling: Rolling) {
+    func addTeam(rolling: Rolling, paper: Paper) {
         database
             .collection("rollingpaper3") //
-            .document("Team5")
+            .document(paper.id)
             .collection("articles") // 게시물(사람)
             .document(rolling.id) // articles.id
             .setData(["message": rolling.message])
-        fetchPostitsTEST()
+        fetchPostitsTEST(paper: paper)
     }
     
     func addTeams(paper: Paper) {
@@ -77,10 +77,10 @@ class RollingStore: ObservableObject {
     }
     
     
-    func findRollingPaper(user: String) {
+    func findRollingPaper(user: String, paper: Paper) {
         database
             .collection("rollingpaper3")
-            .document("Team5")
+            .document(paper.id)
             .collection("articles")
             .document(user)
             .collection("replies")
@@ -119,7 +119,7 @@ class RollingStore: ObservableObject {
                 }
             }
     }
-
+    
 }
 
 

@@ -19,7 +19,7 @@
 		169222EE29470D33001B9E43 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 169222ED29470D33001B9E43 /* FirebaseAuth */; };
 		169222F029470D33001B9E43 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 169222EF29470D33001B9E43 /* FirebaseFirestore */; };
 		169222F229470D33001B9E43 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 169222F129470D33001B9E43 /* FirebaseFirestoreSwift */; };
-		3AB13DBF29470F9300EC41A4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB13DBE29470F9300EC41A4 /* HomeView.swift */; };
+		76945AC329495D8F00454DEE /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76945AC229495D8F00454DEE /* MemberView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		169222E029470C93001B9E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		169222E329470C93001B9E43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		169222EA29470CE0001B9E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3AB13DBE29470F9300EC41A4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		76945AC229495D8F00454DEE /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,15 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				169222DC29470C8F001B9E43 /* _kimWorldApp.swift */,
-				169222DE29470C8F001B9E43 /* ContentView.swift */,
-				3AB13DBE29470F9300EC41A4 /* HomeView.swift */,
+				76945AC529495E2A00454DEE /* Models */,
+				76945AC429495E1C00454DEE /* Views */,
 				169222E029470C93001B9E43 /* Assets.xcassets */,
-				169222EA29470CE0001B9E43 /* GoogleService-Info.plist */,
 				169222E229470C93001B9E43 /* Preview Content */,
-				16644A2C2948091600A6741E /* Rolling.swift */,
-				16644A2E2948092000A6741E /* RollingStore.swift */,
-				16644A322948705100A6741E /* RollingPaperView.swift */,
-				1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */,
 			);
 			path = 3kimWorld;
 			sourceTree = "<group>";
@@ -89,6 +84,27 @@
 				169222E329470C93001B9E43 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		76945AC429495E1C00454DEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169222DE29470C8F001B9E43 /* ContentView.swift */,
+				1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */,
+				76945AC229495D8F00454DEE /* MemberView.swift */,
+				16644A322948705100A6741E /* RollingPaperView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76945AC529495E2A00454DEE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16644A2C2948091600A6741E /* Rolling.swift */,
+				16644A2E2948092000A6741E /* RollingStore.swift */,
+				169222EA29470CE0001B9E43 /* GoogleService-Info.plist */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,12 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB13DBF29470F9300EC41A4 /* HomeView.swift in Sources */,
 				169222DF29470C8F001B9E43 /* ContentView.swift in Sources */,
 				169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */,
 				16644A2D2948091600A6741E /* Rolling.swift in Sources */,
 				16644A2F2948092000A6741E /* RollingStore.swift in Sources */,
 				1618FB7B2949503B00BBDB5B /* MakeTeamView.swift in Sources */,
+				76945AC329495D8F00454DEE /* MemberView.swift in Sources */,
 				16644A332948705100A6741E /* RollingPaperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
