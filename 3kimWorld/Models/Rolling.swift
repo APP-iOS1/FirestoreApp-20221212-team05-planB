@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Member: Identifiable, Hashable {
     var id: String
