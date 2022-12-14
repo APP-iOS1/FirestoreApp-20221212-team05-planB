@@ -31,7 +31,8 @@ class RollingStore: ObservableObject {
                         
                         let docData = document.data()
                         let name: String = docData["name"] as? String ?? ""
-                        let member: Member = Member(id: id, name: name)
+                        let colorIndex: Int = docData["colorIndex"] as? Int ?? 0
+                        let member: Member = Member(id: id, name: name, colorIndex: colorIndex)
                         
                         self.members.append(member)
                     }
@@ -105,7 +106,8 @@ class RollingStore: ObservableObject {
             .document(team.id)
             .collection("articles") // 게시물(사람)
             .document(member.id) // articles.id
-            .setData(["name": member.name])
+            .setData(["name": member.name,
+                      "colorIndex" : member.colorIndex])
         fetchMember(team: team)
     }
     
