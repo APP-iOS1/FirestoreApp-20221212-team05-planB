@@ -13,7 +13,6 @@
 		16644A2F2948092000A6741E /* RollingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2E2948092000A6741E /* RollingStore.swift */; };
 		16644A332948705100A6741E /* RollingPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A322948705100A6741E /* RollingPaperView.swift */; };
 		166FE9A32949C0F1003F71DC /* MemberViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166FE9A22949C0F1003F71DC /* MemberViewBody.swift */; };
-		166FE9A52949C100003F71DC /* MemberViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166FE9A42949C100003F71DC /* MemberViewToolbar.swift */; };
 		169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169222DC29470C8F001B9E43 /* _kimWorldApp.swift */; };
 		169222DF29470C8F001B9E43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169222DE29470C8F001B9E43 /* ContentView.swift */; };
 		169222E129470C93001B9E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 169222E029470C93001B9E43 /* Assets.xcassets */; };
@@ -22,6 +21,7 @@
 		169222EE29470D33001B9E43 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 169222ED29470D33001B9E43 /* FirebaseAuth */; };
 		169222F029470D33001B9E43 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 169222EF29470D33001B9E43 /* FirebaseFirestore */; };
 		169222F229470D33001B9E43 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 169222F129470D33001B9E43 /* FirebaseFirestoreSwift */; };
+		16DE6F322949FFAB001C77E2 /* AddMemberSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DE6F312949FFAB001C77E2 /* AddMemberSheetView.swift */; };
 		3AB13DE829499EE700EC41A4 /* UhBee mysen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB13DE729499EE700EC41A4 /* UhBee mysen.ttf */; };
 		3AB13DEA29499EEF00EC41A4 /* UhBee mysen Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB13DE929499EEE00EC41A4 /* UhBee mysen Bold.ttf */; };
 		76945AC329495D8F00454DEE /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76945AC229495D8F00454DEE /* MemberView.swift */; };
@@ -34,13 +34,13 @@
 		16644A2E2948092000A6741E /* RollingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingStore.swift; sourceTree = "<group>"; };
 		16644A322948705100A6741E /* RollingPaperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollingPaperView.swift; sourceTree = "<group>"; };
 		166FE9A22949C0F1003F71DC /* MemberViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewBody.swift; sourceTree = "<group>"; };
-		166FE9A42949C100003F71DC /* MemberViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewToolbar.swift; sourceTree = "<group>"; };
 		169222D929470C8F001B9E43 /* 3kimWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3kimWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169222DC29470C8F001B9E43 /* _kimWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _kimWorldApp.swift; sourceTree = "<group>"; };
 		169222DE29470C8F001B9E43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		169222E029470C93001B9E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		169222E329470C93001B9E43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		169222EA29470CE0001B9E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		16DE6F312949FFAB001C77E2 /* AddMemberSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberSheetView.swift; sourceTree = "<group>"; };
 		3AB13DE729499EE700EC41A4 /* UhBee mysen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UhBee mysen.ttf"; sourceTree = "<group>"; };
 		3AB13DE929499EEE00EC41A4 /* UhBee mysen Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UhBee mysen Bold.ttf"; sourceTree = "<group>"; };
 		3AB13DEB29499F6900EC41A4 /* -kimWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-kimWorld-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -117,8 +117,8 @@
 				163EA65C2949E7C9006497CF /* MakeTeamToolbar.swift */,
 				76945AC229495D8F00454DEE /* MemberView.swift */,
 				166FE9A22949C0F1003F71DC /* MemberViewBody.swift */,
-				166FE9A42949C100003F71DC /* MemberViewToolbar.swift */,
 				16644A322948705100A6741E /* RollingPaperView.swift */,
+				16DE6F312949FFAB001C77E2 /* AddMemberSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,8 +216,8 @@
 				163EA65D2949E7C9006497CF /* MakeTeamToolbar.swift in Sources */,
 				166FE9A32949C0F1003F71DC /* MemberViewBody.swift in Sources */,
 				169222DF29470C8F001B9E43 /* ContentView.swift in Sources */,
-				166FE9A52949C100003F71DC /* MemberViewToolbar.swift in Sources */,
 				169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */,
+				16DE6F322949FFAB001C77E2 /* AddMemberSheetView.swift in Sources */,
 				16644A2D2948091600A6741E /* Rolling.swift in Sources */,
 				16644A2F2948092000A6741E /* RollingStore.swift in Sources */,
 				1618FB7B2949503B00BBDB5B /* MakeTeamView.swift in Sources */,
