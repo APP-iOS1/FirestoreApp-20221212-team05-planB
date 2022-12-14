@@ -11,6 +11,8 @@
 		16644A2D2948091600A6741E /* Rolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2C2948091600A6741E /* Rolling.swift */; };
 		16644A2F2948092000A6741E /* RollingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2E2948092000A6741E /* RollingStore.swift */; };
 		16644A332948705100A6741E /* RollingPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A322948705100A6741E /* RollingPaperView.swift */; };
+		166FE9A32949C0F1003F71DC /* MemberViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166FE9A22949C0F1003F71DC /* MemberViewBody.swift */; };
+		166FE9A52949C100003F71DC /* MemberViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166FE9A42949C100003F71DC /* MemberViewToolbar.swift */; };
 		169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169222DC29470C8F001B9E43 /* _kimWorldApp.swift */; };
 		169222DF29470C8F001B9E43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169222DE29470C8F001B9E43 /* ContentView.swift */; };
 		169222E129470C93001B9E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 169222E029470C93001B9E43 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		16644A2C2948091600A6741E /* Rolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rolling.swift; sourceTree = "<group>"; };
 		16644A2E2948092000A6741E /* RollingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingStore.swift; sourceTree = "<group>"; };
 		16644A322948705100A6741E /* RollingPaperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollingPaperView.swift; sourceTree = "<group>"; };
+		166FE9A22949C0F1003F71DC /* MemberViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewBody.swift; sourceTree = "<group>"; };
+		166FE9A42949C100003F71DC /* MemberViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewToolbar.swift; sourceTree = "<group>"; };
 		169222D929470C8F001B9E43 /* 3kimWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3kimWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169222DC29470C8F001B9E43 /* _kimWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _kimWorldApp.swift; sourceTree = "<group>"; };
 		169222DE29470C8F001B9E43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */,
 				76945AC229495D8F00454DEE /* MemberView.swift */,
 				16644A322948705100A6741E /* RollingPaperView.swift */,
+				166FE9A22949C0F1003F71DC /* MemberViewBody.swift */,
+				166FE9A42949C100003F71DC /* MemberViewToolbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166FE9A32949C0F1003F71DC /* MemberViewBody.swift in Sources */,
 				169222DF29470C8F001B9E43 /* ContentView.swift in Sources */,
+				166FE9A52949C100003F71DC /* MemberViewToolbar.swift in Sources */,
 				169222DD29470C8F001B9E43 /* _kimWorldApp.swift in Sources */,
 				16644A2D2948091600A6741E /* Rolling.swift in Sources */,
 				16644A2F2948092000A6741E /* RollingStore.swift in Sources */,
