@@ -23,12 +23,12 @@ struct _kimWorldApp: App {
   // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
-
+@StateObject var rollingStore = RollingStore()
   var body: some Scene {
     WindowGroup {
       NavigationView {
-//        ContentView()
-          MakeTeamView()
+        ContentView()
+//          MakeTeamView()
       }
     }
   }

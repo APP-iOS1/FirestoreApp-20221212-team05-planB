@@ -1,20 +1,15 @@
-//
-//  ContentView.swift
-//  3kimWorld
-//
-//  Created by kimminho on 2022/12/12.
-//
 
 import SwiftUI
 
 
 //MARK: - 어떤 회고조인지 선택하는 뷰
-struct ContentView: View {
+struct MemberView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var rollingStore = RollingStore()
     @State private var presentAlert = false
     @State private var teamTextField = ""
     @State var message: String = ""
+    var paper: Paper
     var body: some View {
         NavigationStack {
             List {
@@ -26,17 +21,17 @@ struct ContentView: View {
                             Button {
                                 //완료버튼 눌렀을 때
                                 let createRolling: Rolling = Rolling(id: UUID().uuidString, message: message)
-                                rollingStore.addPostit(userID: item.id, createRolling)
+                                rollingStore.addPostit(userID: item.id, createRolling, paper: paper)
                                 dismiss()
                                 print("tapped")
                             } label: {
                                 Text("작성완료")
                             }
-                            NavigationLink(destination: RollingPaperView(userID: item.id), label: {Text("롤링페이퍼")})
+                            NavigationLink(destination: RollingPaperView(userID: item.id, paper: paper), label: {Text("롤링페이퍼")})
                             Spacer()
-
+                            
                         }
-//                        CreateMessage(dismiss: _dismiss, rollingStore: rollingStore, userID: item.id)
+                        //                        CreateMessage(dismiss: _dismiss, rollingStore: rollingStore, userID: item.id)
                     } label: {
                         Text("\(item.id)")
                     }
@@ -44,8 +39,8 @@ struct ContentView: View {
             }
             .navigationTitle("롤링페이퍼")
             .onAppear {
-                    rollingStore.fetchPostitsTEST()
-                }
+                rollingStore.fetchPostitsTEST(paper: paper)
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("add") {
@@ -58,13 +53,13 @@ struct ContentView: View {
                         })
                         Button("추가", action: {
                             let createRolling: Rolling = Rolling(id: teamTextField, message: teamTextField)
-                            rollingStore.addTeam(rolling: createRolling)
+                            rollingStore.addTeam(rolling: createRolling, paper: paper)
                         })
                     }, message: {
                         Text("추가 할 이름을 적어주세요")
                     })
-
-
+                    
+                    
                 }
             }
         }
@@ -97,8 +92,8 @@ struct ContentView: View {
 //    }
 //}
 
-struct ContentView_Previews: PreviewProvider {
+struct MemberView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MemberView(paper: RollingStore().papers[0])
     }
 }

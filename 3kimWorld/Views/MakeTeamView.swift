@@ -20,8 +20,8 @@ struct MakeTeamView: View {
             List {
                 ForEach(rollingStore.papers,id: \.self) { item in
                     NavigationLink {
-                        ContentView()
-
+                        
+                        MemberView(paper: item)
                     } label: {
                         Text("\(item.id)")
                     }
@@ -30,7 +30,7 @@ struct MakeTeamView: View {
             .navigationTitle("팀추가")
             .onAppear {
                 rollingStore.fetchTeam()
-                }
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("add") {
@@ -48,8 +48,6 @@ struct MakeTeamView: View {
                     }, message: {
                         Text("추가 할 이름을 적어주세요")
                     })
-
-
                 }
             }
         }
