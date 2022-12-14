@@ -11,16 +11,17 @@ import SwiftUI
 //MARK: - 팀선택뷰 그리고 팀 추가뷰
 struct MakeTeamView: View {
     @EnvironmentObject var rollingStore: RollingStore
-    @State var message: String = ""
     
     var body: some View {
         List(rollingStore.teams) {item in
             NavigationLink(item.team) { MemberView(team: item) }
         }//List
+        
         .navigationTitle("팀 선택")
         .onAppear { rollingStore.fetchTeam() }
         .toolbar { MakeTeamToolbar() }
     }//body
+    
 }//struct MakeTeamView
 
 struct MakeTeamView_Previews: PreviewProvider {

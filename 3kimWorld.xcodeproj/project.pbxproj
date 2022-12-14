@@ -81,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				3AB13DEB29499F6900EC41A4 /* -kimWorld-Info.plist */,
+				169222EA29470CE0001B9E43 /* GoogleService-Info.plist */,
 				3AB13DE429499E9A00EC41A4 /* Fonts */,
 				169222DC29470C8F001B9E43 /* _kimWorldApp.swift */,
 				76945AC529495E2A00454DEE /* Models */,
@@ -127,7 +128,6 @@
 			children = (
 				16644A2C2948091600A6741E /* Rolling.swift */,
 				16644A2E2948092000A6741E /* RollingStore.swift */,
-				169222EA29470CE0001B9E43 /* GoogleService-Info.plist */,
 			);
 			path = Models;
 			sourceTree = "<group>";

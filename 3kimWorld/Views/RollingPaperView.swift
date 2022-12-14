@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RollingPaperView: View {
-    
     @EnvironmentObject var rollingStore: RollingStore
     var team: Team
     var member: Member

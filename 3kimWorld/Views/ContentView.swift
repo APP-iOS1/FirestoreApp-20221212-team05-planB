@@ -11,11 +11,10 @@ import SwiftUI
 //MARK: - 어떤 회고조인지 선택하는 뷰
 struct ContentView: View {
     @EnvironmentObject var rollingStore: RollingStore
+    
     var body: some View {
         NavigationStack {
-            VStack {
-                MakeTeamView()
-            }
+            VStack { MakeTeamView() }
         }
     }
 }

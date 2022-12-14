@@ -11,10 +11,13 @@ struct MemberView: View {
         List(rollingStore.members) {item in
             NavigationLink(item.name) { MemberViewBody(item: item, team: team) }
         }//List
+        
         .navigationTitle("롤링페이퍼")
         .onAppear { rollingStore.fetchMember(team: team) }
         .toolbar { MemberViewToolbar(team:team) }
+        
     }//body
+    
 }//struct MemberView
 
 
