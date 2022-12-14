@@ -10,20 +10,18 @@ import SwiftUI
 
 //MARK: - 어떤 회고조인지 선택하는 뷰
 struct MakeTeamView: View {
-    @Environment(\.dismiss) var dismiss
-    @StateObject var rollingStore = RollingStore()
+//    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var rollingStore: RollingStore
     @State private var presentAlert = false
     @State private var teamTextField = ""
     @State var message: String = ""
     var body: some View {
-        NavigationStack {
             List {
-                ForEach(rollingStore.papers,id: \.self) { item in
+                ForEach(rollingStore.teams,id: \.self) { item in
                     NavigationLink {
-                        
-                        MemberView(paper: item)
+                        MemberView(team: item)
                     } label: {
-                        Text("\(item.id)")
+                        Text("\(item.team)")
                     }
                 }
             }
@@ -42,20 +40,24 @@ struct MakeTeamView: View {
                         Button("취소",role: .cancel,action: {
                         })
                         Button("추가", action: {
-                            let createTeam = Paper(id: teamTextField)
-                            rollingStore.addTeams(paper: createTeam)
+                            let createTeam = Team(id: UUID().uuidString, team: teamTextField)
+                            rollingStore.addTeam(team: createTeam)
                         })
                     }, message: {
                         Text("추가 할 이름을 적어주세요")
                     })
                 }
             }
-        }
+        
     }
 }
 
 struct MakeTeamView_Previews: PreviewProvider {
     static var previews: some View {
-        MakeTeamView()
+        NavigationStack {
+            
+            MakeTeamView()
+                .environmentObject(RollingStore())
+        }
     }
 }

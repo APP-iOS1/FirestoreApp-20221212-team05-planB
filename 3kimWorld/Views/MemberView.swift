@@ -4,42 +4,41 @@ import SwiftUI
 
 //MARK: - 어떤 회고조인지 선택하는 뷰
 struct MemberView: View {
-    @Environment(\.dismiss) var dismiss
-    @StateObject var rollingStore = RollingStore()
+//    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var rollingStore: RollingStore
     @State private var presentAlert = false
     @State private var teamTextField = ""
     @State var message: String = ""
-    var paper: Paper
+    var team: Team
     var body: some View {
-        NavigationStack {
             List {
-                ForEach(rollingStore.rollings,id: \.self) { item in
+                ForEach(rollingStore.members,id: \.self) { item in
                     NavigationLink {
                         VStack {
                             TextEditor(text: $message)
                                 .frame(width: 300,height: 500)
                             Button {
                                 //완료버튼 눌렀을 때
-                                let createRolling: Rolling = Rolling(id: UUID().uuidString, message: message)
-                                rollingStore.addPostit(userID: item.id, createRolling, paper: paper)
-                                dismiss()
+                                let createMessage: Message = Message(id: UUID().uuidString, message: message)
+                                rollingStore.addMessage(member: item, team: team, message: createMessage)
+//                                dismiss()
                                 print("tapped")
                             } label: {
                                 Text("작성완료")
                             }
-                            NavigationLink(destination: RollingPaperView(userID: item.id, paper: paper), label: {Text("롤링페이퍼")})
+                            NavigationLink(destination: RollingPaperView(team: team, member: item), label: {Text("롤링페이퍼")})
                             Spacer()
-                            
+
                         }
                         //                        CreateMessage(dismiss: _dismiss, rollingStore: rollingStore, userID: item.id)
                     } label: {
-                        Text("\(item.id)")
+                        Text("\(item.name)")
                     }
                 }
             }
             .navigationTitle("롤링페이퍼")
             .onAppear {
-                rollingStore.fetchPostitsTEST(paper: paper)
+                rollingStore.fetchMember(team: team)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -52,8 +51,8 @@ struct MemberView: View {
                         Button("취소",role: .cancel,action: {
                         })
                         Button("추가", action: {
-                            let createRolling: Rolling = Rolling(id: teamTextField, message: teamTextField)
-                            rollingStore.addTeam(rolling: createRolling, paper: paper)
+                            let createMember: Member = Member(id: UUID().uuidString, name: teamTextField)
+                            rollingStore.addMember(member: createMember, team: team)
                         })
                     }, message: {
                         Text("추가 할 이름을 적어주세요")
@@ -62,7 +61,7 @@ struct MemberView: View {
                     
                 }
             }
-        }
+        
     }
 }
 
@@ -79,7 +78,7 @@ struct MemberView: View {
 //            Button {
 //                //완료버튼 눌렀을 때
 //                let createRolling: Rolling = Rolling(id: UUID().uuidString, message: message)
-//                rollingStore.addPostit(userID: userID, createRolling)
+//                rollingStore.addMessage(userID: userID, createRolling)
 //                dismiss()
 //                print("tapped")
 //            } label: {
@@ -92,8 +91,8 @@ struct MemberView: View {
 //    }
 //}
 
-struct MemberView_Previews: PreviewProvider {
-    static var previews: some View {
-        MemberView(paper: RollingStore().papers[0])
-    }
-}
+//struct MemberView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MemberView(paper: RollingStore().papers[0])
+//    }
+//}
