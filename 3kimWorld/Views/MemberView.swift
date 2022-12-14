@@ -15,7 +15,6 @@ struct MemberView: View {
                 ForEach(rollingStore.members,id: \.self) { item in
                     NavigationLink {
                         MemberViewBody(item: item, team: team)
-
                     } label: {
                         Text("\(item.name)")
                     }
@@ -26,7 +25,7 @@ struct MemberView: View {
                 rollingStore.fetchMember(team: team)
             }
             .toolbar {
-                MyToolBarContent(team:team)
+                MemberViewToolbar(team:team)
             }
     }
 }
