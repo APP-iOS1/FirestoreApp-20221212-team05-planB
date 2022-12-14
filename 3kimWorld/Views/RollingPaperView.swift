@@ -19,14 +19,20 @@ struct RollingPaperView: View {
     
     var body: some View {
         
-        LazyVGrid(columns: columns, spacing: 30) {
-            ForEach(Array(rollingStore.rollingPapers.enumerated()), id: \.offset){ index, replies in
-                
-                VStack {
-                    Text(replies.message)
+        ZStack {
+            
+            Image("paperImage")
+                .ignoresSafeArea()
+            LazyVGrid(columns: columns, spacing: 30) {
+                ForEach(Array(rollingStore.rollingPapers.enumerated()), id: \.offset){ index, replies in
+                    
+                    VStack {
+                        Text(replies.message)
+                    }
                 }
             }
         }
+
         .onAppear {
             rollingStore.fetchMessage(member: member, team: team)
         }
