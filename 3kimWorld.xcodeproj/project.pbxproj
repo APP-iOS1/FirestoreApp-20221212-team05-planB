@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1618FB7B2949503B00BBDB5B /* MakeTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */; };
+		163EA65D2949E7C9006497CF /* MakeTeamToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163EA65C2949E7C9006497CF /* MakeTeamToolbar.swift */; };
 		16644A2D2948091600A6741E /* Rolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2C2948091600A6741E /* Rolling.swift */; };
 		16644A2F2948092000A6741E /* RollingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A2E2948092000A6741E /* RollingStore.swift */; };
 		16644A332948705100A6741E /* RollingPaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16644A322948705100A6741E /* RollingPaperView.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamView.swift; sourceTree = "<group>"; };
+		163EA65C2949E7C9006497CF /* MakeTeamToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamToolbar.swift; sourceTree = "<group>"; };
 		16644A2C2948091600A6741E /* Rolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rolling.swift; sourceTree = "<group>"; };
 		16644A2E2948092000A6741E /* RollingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingStore.swift; sourceTree = "<group>"; };
 		16644A322948705100A6741E /* RollingPaperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollingPaperView.swift; sourceTree = "<group>"; };
@@ -111,10 +113,11 @@
 			children = (
 				169222DE29470C8F001B9E43 /* ContentView.swift */,
 				1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */,
+				163EA65C2949E7C9006497CF /* MakeTeamToolbar.swift */,
 				76945AC229495D8F00454DEE /* MemberView.swift */,
-				16644A322948705100A6741E /* RollingPaperView.swift */,
 				166FE9A22949C0F1003F71DC /* MemberViewBody.swift */,
 				166FE9A42949C100003F71DC /* MemberViewToolbar.swift */,
+				16644A322948705100A6741E /* RollingPaperView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163EA65D2949E7C9006497CF /* MakeTeamToolbar.swift in Sources */,
 				166FE9A32949C0F1003F71DC /* MemberViewBody.swift in Sources */,
 				169222DF29470C8F001B9E43 /* ContentView.swift in Sources */,
 				166FE9A52949C100003F71DC /* MemberViewToolbar.swift in Sources */,
