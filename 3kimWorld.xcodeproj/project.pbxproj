@@ -19,6 +19,8 @@
 		169222EE29470D33001B9E43 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 169222ED29470D33001B9E43 /* FirebaseAuth */; };
 		169222F029470D33001B9E43 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 169222EF29470D33001B9E43 /* FirebaseFirestore */; };
 		169222F229470D33001B9E43 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 169222F129470D33001B9E43 /* FirebaseFirestoreSwift */; };
+		3AB13DE829499EE700EC41A4 /* UhBee mysen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB13DE729499EE700EC41A4 /* UhBee mysen.ttf */; };
+		3AB13DEA29499EEF00EC41A4 /* UhBee mysen Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB13DE929499EEE00EC41A4 /* UhBee mysen Bold.ttf */; };
 		76945AC329495D8F00454DEE /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76945AC229495D8F00454DEE /* MemberView.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,9 @@
 		169222E029470C93001B9E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		169222E329470C93001B9E43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		169222EA29470CE0001B9E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3AB13DE729499EE700EC41A4 /* UhBee mysen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UhBee mysen.ttf"; sourceTree = "<group>"; };
+		3AB13DE929499EEE00EC41A4 /* UhBee mysen Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UhBee mysen Bold.ttf"; sourceTree = "<group>"; };
+		3AB13DEB29499F6900EC41A4 /* -kimWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-kimWorld-Info.plist"; sourceTree = SOURCE_ROOT; };
 		76945AC229495D8F00454DEE /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +74,8 @@
 		169222DB29470C8F001B9E43 /* 3kimWorld */ = {
 			isa = PBXGroup;
 			children = (
+				3AB13DEB29499F6900EC41A4 /* -kimWorld-Info.plist */,
+				3AB13DE429499E9A00EC41A4 /* Fonts */,
 				169222DC29470C8F001B9E43 /* _kimWorldApp.swift */,
 				76945AC529495E2A00454DEE /* Models */,
 				76945AC429495E1C00454DEE /* Views */,
@@ -84,6 +91,15 @@
 				169222E329470C93001B9E43 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3AB13DE429499E9A00EC41A4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3AB13DE729499EE700EC41A4 /* UhBee mysen.ttf */,
+				3AB13DE929499EEE00EC41A4 /* UhBee mysen Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		76945AC429495E1C00454DEE /* Views */ = {
@@ -173,7 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB13DE829499EE700EC41A4 /* UhBee mysen.ttf in Resources */,
 				169222EB29470CE1001B9E43 /* GoogleService-Info.plist in Resources */,
+				3AB13DEA29499EEF00EC41A4 /* UhBee mysen Bold.ttf in Resources */,
 				169222E429470C93001B9E43 /* Preview Assets.xcassets in Resources */,
 				169222E129470C93001B9E43 /* Assets.xcassets in Resources */,
 			);
@@ -324,6 +342,7 @@
 				DEVELOPMENT_TEAM = 69AX92X75M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-kimWorld-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -353,6 +372,7 @@
 				DEVELOPMENT_TEAM = 69AX92X75M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "-kimWorld-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

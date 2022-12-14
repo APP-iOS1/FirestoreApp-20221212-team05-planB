@@ -24,9 +24,12 @@ struct RollingPaperView: View {
                 
                 VStack {
                     Text(replies.message)
+                        .font(.custom("UhBee mysen", size: 25))
+                        .lineSpacing(5)
                 }
             }
         }
+        .padding()
         .onAppear {
             rollingStore.fetchMessage(member: member, team: team)
         }
