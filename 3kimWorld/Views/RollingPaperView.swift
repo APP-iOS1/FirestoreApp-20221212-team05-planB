@@ -18,9 +18,10 @@ struct RollingPaperView: View {
             ForEach(Array(rollingStore.rollingPapers.enumerated()), id: \.offset){ index, replies in
                 VStack {
                     Text(replies.message)
-                        .rotationEffect(.degrees(Double.random(in:0...360)))
+                        .rotationEffect(.degrees(Double.random(in:-50...50)))
                         .font(.custom("UhBee mysen", size: 25))
                 }
+                .padding(5)
                 Spacer()
                 
             }

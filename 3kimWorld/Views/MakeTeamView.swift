@@ -15,7 +15,10 @@ struct MakeTeamView: View {
     var body: some View {
         List(rollingStore.teams) {item in
             NavigationLink(item.team) { MemberView(team: item) }
-        }//List
+        }
+        .scrollContentBackground(.hidden)
+        .background(Color(hue: 0.102, saturation: 0.224, brightness: 0.918))
+        //List
         
         .navigationTitle("팀 선택")
         .onAppear { rollingStore.fetchTeam() }
