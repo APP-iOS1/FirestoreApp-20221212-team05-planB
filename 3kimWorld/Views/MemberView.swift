@@ -17,11 +17,11 @@ struct MemberView: View {
                 .ignoresSafeArea()
             LazyVGrid(columns: columns, spacing: 30) {
                 ForEach(rollingStore.members,id: \.self) { item in
-                    NavigationLink {
-                        WriteMessageView(item: item, team: team)
-                    } label: { NavigationLinklabel() }
-                }
-            }
+                    NavigationLink(destination: WriteMessageView(item: item, team: team)) {
+                        NavigationLinklabel(item: item)
+                    }//NavigationLink
+                }//ForEach
+            }//LazyVGrid
             .fullScreenCover(isPresented: $isShowingSheet, content: {
                 AddMemberSheetView(isShowingSheet: $isShowingSheet, team: team, rollingStore: rollingStore)
             })
@@ -33,7 +33,7 @@ struct MemberView: View {
 
         
     }
-    func NavigationLinklabel() -> some View {
+    func NavigationLinklabel(item: Member) -> some View {
         VStack {
             Image(item.color.1)
                 .resizable()
