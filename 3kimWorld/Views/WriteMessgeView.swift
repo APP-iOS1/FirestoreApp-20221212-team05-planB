@@ -46,13 +46,15 @@ struct WriteMessageView: View {
                     } label: {
                         Text("작성완료")
                             .frame(width: 185, height: 50)
-                            .background(.yellow)
+                            .foregroundColor(.white)
+                            .background(Color(hue: 0.55, saturation: 0.555, brightness: 0.775))
                             .cornerRadius(10)
                     }
                     
                     //롤링페이퍼 버튼을 누르면 그 동안 작성한 롤링페이퍼뷰로 이동
                     NavigationLink(destination: RollingPaperView(team: team, member: item), label: {Text("롤링페이퍼").frame(width: 185, height: 50)
-                            .background(.yellow)
+                            .foregroundColor(.white)
+                            .background(Color(hue: 0.55, saturation: 0.555, brightness: 0.775))
                             .cornerRadius(10)
                     })
                     Spacer()

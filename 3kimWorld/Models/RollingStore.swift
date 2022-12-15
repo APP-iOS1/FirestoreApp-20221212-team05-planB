@@ -47,6 +47,7 @@ class RollingStore: ObservableObject {
     func fetchTeam() {
         database
             .collection("rollingpaper")
+            .order(by: "team", descending: false)
             .getDocuments { (snapshot, error) in
                 self.teams.removeAll()
                 

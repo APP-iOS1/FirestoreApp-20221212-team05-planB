@@ -12,6 +12,7 @@ struct Member: Identifiable, Hashable {
     var id: String
     var name: String
     var colorIndex: Int
+    
     var color: (Color, String) {
         switch colorIndex {
         case 0:
