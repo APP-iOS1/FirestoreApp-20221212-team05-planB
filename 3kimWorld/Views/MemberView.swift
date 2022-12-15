@@ -73,8 +73,5 @@ struct MemberView: View {
             }
             
         }
-    }
-    
-    
+    }  
 }
-

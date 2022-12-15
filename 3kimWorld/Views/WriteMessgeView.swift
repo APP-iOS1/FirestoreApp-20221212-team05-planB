@@ -52,23 +52,27 @@ struct WriteMessageView: View {
                     }
                     
                     //롤링페이퍼 버튼을 누르면 그 동안 작성한 롤링페이퍼뷰로 이동
-                    NavigationLink(destination: RollingPaperView(team: team, member: item), label: {Text("롤링페이퍼").frame(width: 185, height: 50)
+                    NavigationLink(destination: RollingPaperView(team: team, member: item)){
+                        Text("롤링페이퍼")
+                            .frame(width: 185, height: 50)
                             .foregroundColor(.white)
                             .background(Color(hue: 0.55, saturation: 0.555, brightness: 0.775))
                             .cornerRadius(10)
-                    })
+                    }
                     Spacer()
-                }.foregroundColor(.black)
-                    .padding(.leading, 10)
+                }
+                .foregroundColor(.black)
+                .padding(.leading, 10)
                 Spacer()
-                //            .formStyle(.columns)
             }
         }
     }
 }
 
-//struct MemberViewBody_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MemberViewBody(item:item,team:team)
-//    }
-//}
+struct WriteMessageView_Previews: PreviewProvider {
+    var item: Member
+    var team: Team
+    static var previews: some View {
+        WriteMessageView(item:Member(id: "abc", name: "김잭슨", colorIndex: 3),team:Team(id: "34779542-6DBB-445F-9A2E-A849A6CA8DE6", team: "회고 5조"))
+    }
+}
