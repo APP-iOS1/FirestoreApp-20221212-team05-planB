@@ -14,25 +14,33 @@ struct MemberView: View {
             
             Color(hue: 0.102, saturation: 0.224, brightness: 0.918)
                 .ignoresSafeArea()
-            
-            // 멤버들을 그리드로 정렬
-            LazyVGrid(columns: columns, spacing: 30) {
-                ForEach(rollingStore.members,id: \.self) { item in
-                    
-                    //멤버를 클릭하면 롤링페이퍼 작성화면으로 이동
-                    NavigationLink(destination: WriteMessageView(item: item, team: team)) {
-                        
-                        // AddMemberSheetView에서 입력한 조원 이름과 선택한 컬러의 편지지로 조원 생성됨.
-                        NavigationLinklabel(item: item)
-                    }//NavigationLink
-                }//ForEach
-            }//LazyVGrid
+            VStack {
+                if rollingStore.members.isEmpty {
+                    Text("회고 조원을 추가해주세요")
+                        .foregroundColor(.secondary)
+                        .font(.custom("UhBee mysen", size: 25))
+
+                } else {
+                    // 멤버들을 그리드로 정렬
+                    LazyVGrid(columns: columns, spacing: 30) {
+                        ForEach(rollingStore.members,id: \.self) { item in
+                            
+                            //멤버를 클릭하면 롤링페이퍼 작성화면으로 이동
+                            NavigationLink(destination: WriteMessageView(item: item, team: team)) {
+                                
+                                // AddMemberSheetView에서 입력한 조원 이름과 선택한 컬러의 편지지로 조원 생성됨.
+                                NavigationLinklabel(item: item)
+                            }//NavigationLink
+                        }//ForEach
+                    }//LazyVGrid
+                }
+            }
             .fullScreenCover(isPresented: $isShowingSheet, content: {
                 
                 //toolbar 오른쪽 add버튼을 클릭하면 멤버를 추가할 수 있는 sheet 올라옴
                 AddMemberSheetView(isShowingSheet: $isShowingSheet, team: team, rollingStore: rollingStore)
             })
-            .navigationTitle("롤링페이퍼")
+            .navigationTitle("RollingPaper")
             .onAppear { rollingStore.fetchMember(team: team) }
             .toolbar { MemberToolbar() }
         }

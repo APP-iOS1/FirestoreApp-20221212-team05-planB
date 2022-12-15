@@ -55,6 +55,8 @@ struct AddMemberSheetView: View {
                 }
                 
             }
+            .scrollContentBackground(.hidden)
+            .background(Color(hue: 0.102, saturation: 0.224, brightness: 0.918))
             .navigationTitle("Add new Post")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

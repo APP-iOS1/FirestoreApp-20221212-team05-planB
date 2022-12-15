@@ -31,7 +31,7 @@ struct MakeTeamView: View {
 //        .listStyle(.inset)
         .scrollContentBackground(.hidden)
         .background(Color(hue: 0.102, saturation: 0.224, brightness: 0.918))
-        .navigationTitle("회고조 선택")
+        .navigationTitle("RollingPaper")
         .onAppear { rollingStore.fetchTeam() }
         
         //toolbar 오른쪽의 add버튼을 누르면 조를 추가할 수 있는 alert
