@@ -14,6 +14,8 @@ struct RollingPaperView: View {
     let columns = [GridItem(.adaptive(minimum: 100))]
     
     var body: some View {
+        
+        //작성된 롤링페이퍼를 각도를 바꿔서 그리드로 나열
         LazyVGrid(columns: columns, spacing: 30) {
             ForEach(Array(rollingStore.rollingPapers.enumerated()), id: \.offset){ index, replies in
                 VStack {

@@ -18,6 +18,8 @@ struct WriteMessageView: View {
             Color(hue: 0.102, saturation: 0.224, brightness: 0.918)
                 .edgesIgnoringSafeArea(.all)
             VStack {
+                
+                //롤링페이퍼에 메시지 작성하는 TextEditor
                 TextEditor(text: $message)
                     .font(.custom("UhBee mysen", size: 25))
                     .scrollContentBackground(.hidden)
@@ -47,8 +49,11 @@ struct WriteMessageView: View {
                             .background(.yellow)
                             .cornerRadius(10)
                     }
+                    
+                    //롤링페이퍼 버튼을 누르면 그 동안 작성한 롤링페이퍼뷰로 이동
                     NavigationLink(destination: RollingPaperView(team: team, member: item), label: {Text("롤링페이퍼").frame(width: 185, height: 50)
-                            .background(.yellow)                        .cornerRadius(10)
+                            .background(.yellow)
+                            .cornerRadius(10)
                     })
                     Spacer()
                 }.foregroundColor(.black)

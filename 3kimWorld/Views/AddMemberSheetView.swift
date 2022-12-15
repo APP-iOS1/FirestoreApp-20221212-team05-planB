@@ -28,19 +28,19 @@ struct AddMemberSheetView: View {
                             HStack {
                                 ForEach(Array(colors.enumerated()), id: \.offset) { idx, color in
                                     
-                                        Button {
-                                            colorIndex = idx
-                                            selecterColor = color
-                                        } label: {
-                                            Circle()
-                                                .frame(width: 50, height: 50)
-                                                .foregroundColor(color)
-                                                .overlay(Circle().stroke(Color.black, lineWidth: selecterColor == color ? 3 : 0.8))
-                                                .padding(5)
-                                                
-                                            
-                                        }
-                                
+                                    Button {
+                                        colorIndex = idx
+                                        selecterColor = color
+                                    } label: {
+                                        Circle()
+                                            .frame(width: 50, height: 50)
+                                            .foregroundColor(color)
+                                            .overlay(Circle().stroke(Color.black, lineWidth: selecterColor == color ? 3 : 0.8))
+                                            .padding(5)
+                                        
+                                        
+                                    }
+                                    
                                 }
                             }
                         }
@@ -55,7 +55,6 @@ struct AddMemberSheetView: View {
                 }
                 
             }
-//            .formStyle(.columns)
             .navigationTitle("Add new Post")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -74,22 +73,8 @@ struct AddMemberSheetView: View {
                     } label: {
                         Text("추가")
                     }
-                    
-                    
                 }
-                
-                //                if trimMemo.count > 0 {
-                //                    ToolbarItem(placement: .navigationBarTrailing) {
-                //                        Button("Submit") {
-                //                            let createdAt = Date().timeIntervalSince1970
-                //                            let postit: Postit = Postit(id: UUID().uuidString, user: "Steve", memo: memo, colorIndex: colorIndex, createdAt: createdAt)
-                //                            postitStore.addPostit(postit)
-                //                            showingSheet.toggle()
-                //                        }
-                //                    }
-                //                }
             }
-            
         }
     }
 }

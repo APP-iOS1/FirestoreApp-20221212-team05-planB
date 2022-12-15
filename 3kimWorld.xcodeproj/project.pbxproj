@@ -24,7 +24,6 @@
 		16DE6F322949FFAB001C77E2 /* AddMemberSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DE6F312949FFAB001C77E2 /* AddMemberSheetView.swift */; };
 		3AB13DE829499EE700EC41A4 /* UhBee mysen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB13DE729499EE700EC41A4 /* UhBee mysen.ttf */; };
 		3AB13DEA29499EEF00EC41A4 /* UhBee mysen Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AB13DE929499EEE00EC41A4 /* UhBee mysen Bold.ttf */; };
-		763A88BF294A30C2008ED9EC /* TeamListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A88BE294A30C2008ED9EC /* TeamListRowView.swift */; };
 		76945AC329495D8F00454DEE /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76945AC229495D8F00454DEE /* MemberView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +44,6 @@
 		3AB13DE729499EE700EC41A4 /* UhBee mysen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UhBee mysen.ttf"; sourceTree = "<group>"; };
 		3AB13DE929499EEE00EC41A4 /* UhBee mysen Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UhBee mysen Bold.ttf"; sourceTree = "<group>"; };
 		3AB13DEB29499F6900EC41A4 /* -kimWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "-kimWorld-Info.plist"; sourceTree = SOURCE_ROOT; };
-		763A88BE294A30C2008ED9EC /* TeamListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListRowView.swift; sourceTree = "<group>"; };
 		76945AC229495D8F00454DEE /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +114,6 @@
 			children = (
 				169222DE29470C8F001B9E43 /* ContentView.swift */,
 				1618FB7A2949503B00BBDB5B /* MakeTeamView.swift */,
-				763A88BE294A30C2008ED9EC /* TeamListRowView.swift */,
 				163EA65C2949E7C9006497CF /* MakeTeamToolbar.swift */,
 				76945AC229495D8F00454DEE /* MemberView.swift */,
 				166FE9A22949C0F1003F71DC /* WriteMessgeView.swift */,
@@ -225,7 +222,6 @@
 				16644A2F2948092000A6741E /* RollingStore.swift in Sources */,
 				1618FB7B2949503B00BBDB5B /* MakeTeamView.swift in Sources */,
 				76945AC329495D8F00454DEE /* MemberView.swift in Sources */,
-				763A88BF294A30C2008ED9EC /* TeamListRowView.swift in Sources */,
 				16644A332948705100A6741E /* RollingPaperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
