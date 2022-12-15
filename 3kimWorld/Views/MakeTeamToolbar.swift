@@ -26,6 +26,7 @@ struct MakeTeamToolbar: ToolbarContent {
                 Button("추가", action: {
                     let createTeam = Team(id: UUID().uuidString, team: teamTextField)
                     rollingStore.addTeam(team: createTeam)
+                    teamTextField = ""
                 })
             }, message: {
                 Text("추가 할 이름을 적어주세요")

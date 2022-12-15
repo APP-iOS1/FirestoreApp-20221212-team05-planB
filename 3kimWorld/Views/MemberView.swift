@@ -12,42 +12,48 @@ struct MemberView: View {
     var team: Team
     let columns = [GridItem(.adaptive(minimum: 100))]
     var body: some View {
-        LazyVGrid(columns: columns, spacing: 30) {
-            ForEach(rollingStore.members,id: \.self) { item in
-                NavigationLink {
-                    MemberViewBody(item: item, team: team)
-                } label: {
-                    VStack {
-                        Image(item.color.1)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Text("\(item.name)")
-                            .font(.custom("UhBee mysen", size: 25))
-                            .foregroundColor(.black)
-                            .lineSpacing(5)
-                        
+        ZStack {
+            Color(hue: 0.102, saturation: 0.224, brightness: 0.918)
+                .ignoresSafeArea()
+            LazyVGrid(columns: columns, spacing: 30) {
+                ForEach(rollingStore.members,id: \.self) { item in
+                    NavigationLink {
+                        WriteMessageView(item: item, team: team)
+                    } label: {
+                        VStack {
+                            Image(item.color.1)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            Text("\(item.name)")
+                                .font(.custom("UhBee mysen", size: 25))
+                                .foregroundColor(.black)
+                                .lineSpacing(5)
+                        }
                     }
                 }
             }
-        }
-        .sheet(isPresented: $isShowingSheet, content: {
-            AddMemberSheetView(isShowingSheet: $isShowingSheet, team: team, rollingStore: rollingStore)
-        })
-        
-        .navigationTitle("롤링페이퍼")
-        .onAppear { rollingStore.fetchMember(team: team) }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isShowingSheet.toggle()
-                } label: {
-                    Text("add")
-
-                }
-
-            }
+            .fullScreenCover(isPresented: $isShowingSheet, content: {
+                AddMemberSheetView(isShowingSheet: $isShowingSheet, team: team, rollingStore: rollingStore)
+            })
             
+            .navigationTitle("롤링페이퍼")
+            
+            .onAppear { rollingStore.fetchMember(team: team) }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isShowingSheet.toggle()
+                    } label: {
+                        Text("add")
+                        
+                    }
+                    
+                }
+                
+            }
         }
+//        .ignoresSafeArea()
+
         
     }
 }
