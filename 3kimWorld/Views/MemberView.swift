@@ -19,42 +19,44 @@ struct MemberView: View {
                 ForEach(rollingStore.members,id: \.self) { item in
                     NavigationLink {
                         WriteMessageView(item: item, team: team)
-                    } label: {
-                        VStack {
-                            Image(item.color.1)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            Text("\(item.name)")
-                                .font(.custom("UhBee mysen", size: 25))
-                                .foregroundColor(.black)
-                                .lineSpacing(5)
-                        }
-                    }
+                    } label: { NavigationLinklabel() }
                 }
             }
             .fullScreenCover(isPresented: $isShowingSheet, content: {
                 AddMemberSheetView(isShowingSheet: $isShowingSheet, team: team, rollingStore: rollingStore)
             })
-            
             .navigationTitle("롤링페이퍼")
-            
             .onAppear { rollingStore.fetchMember(team: team) }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        isShowingSheet.toggle()
-                    } label: {
-                        Text("add")
-                        
-                    }
-                    
-                }
-                
-            }
+            .toolbar { MemberToolbar() }
         }
 //        .ignoresSafeArea()
 
         
     }
+    func NavigationLinklabel() -> some View {
+        VStack {
+            Image(item.color.1)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Text("\(item.name)")
+                .font(.custom("UhBee mysen", size: 25))
+                .foregroundColor(.black)
+                .lineSpacing(5)
+        }
+    }
+    
+    func MemberToolbar() -> some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+                isShowingSheet.toggle()
+            } label: {
+                Text("add")
+                
+            }
+            
+        }
+    }
+    
+    
 }
 
