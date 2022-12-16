@@ -11,6 +11,9 @@ struct GridTest: View {
     let columns: [GridItem] = Array(repeating: .init(.flexible()),count:3)
     var GaArray: [String] = ["레이디","가가","동해물과백두산이마르고닳도록하느님이보우하사 우리나라만세","우가우가우가우가우가우가","아프리카","레이디","가가","벵비","우가우가","잭슨"]
     var body: some View {
+        
+        
+        
         LazyVGrid(columns: columns) {
             ForEach(Array(GaArray.enumerated()),id: \.offset){ idx,value in
                 
