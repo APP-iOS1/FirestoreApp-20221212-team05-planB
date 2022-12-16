@@ -11,7 +11,7 @@ struct RollingPaperView: View {
     @EnvironmentObject var rollingStore: RollingStore
     var team: Team
     var member: Member
-    let columns = [GridItem(.adaptive(minimum: 100))]
+    let columns: [GridItem] = Array(repeating: .init(.flexible()),count:3)
     
     var body: some View {
         NavigationStack {
@@ -21,18 +21,32 @@ struct RollingPaperView: View {
                     .ignoresSafeArea()
                 
                 //작성된 롤링페이퍼를 각도를 바꿔서 그리드로 나열
-                LazyVGrid(columns: columns, spacing: 30) {
-                    ForEach(Array(rollingStore.rollingPapers.enumerated()), id: \.offset){ index, replies in
-                        VStack {
+                LazyVGrid(columns: columns) {
+                    ForEach(Array(rollingStore.rollingPapers.enumerated()), id:\.offset){ idx,replies in
+                        if idx % 3 == 0 {
                             Text(replies.message)
-                                .rotationEffect(.degrees(Double.random(in:-50...50)))
-                                .font(.custom("UhBee mysen", size: 25))
+                                .rotationEffect(.degrees(Double.random(in:-25...0)))
+                                .font(.custom("UhBee mysen", size: 20))
+                                .frame(width:100, height:130)
                         }
-                        .padding(5)
-                        Spacer()
+                        //2분단
+                        else if idx % 3 == 1 {
+                            Text(replies.message)
+                                .rotationEffect(.degrees(Double.random(in:-25...25)))
+                                .font(.custom("UhBee mysen", size: 20))
+                                .frame(width:100, height:130)
+                        }
+                        //3분단
+                        else {
+                            Text(replies.message)
+                                .rotationEffect(.degrees(Double.random(in:0...25)))
+                                .font(.custom("UhBee mysen", size: 20))
+                                .frame(width:100, height:130)
+                        }
                         
                     }
                 }
+//                .frame(width:300)
                 
                 .onAppear {
                     rollingStore.fetchMessage(member: member, team: team)
